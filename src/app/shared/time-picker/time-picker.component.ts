@@ -25,13 +25,26 @@ export class TimePickerComponent {
           // Exclude 20:30
           continue;
         }
-        const timeStr = `${hour.toString().padStart(2, "0")}:${minute
-          .toString()
-          .padStart(2, "0")}`;
+        const timeStr = {
+          value: `${hour.toString().padStart(2, "0")}:${minute
+            .toString()
+            .padStart(2, "0")}`,
+          selected: false,
+        };
         this.timeList.push(timeStr);
       }
     }
     console.log(this.timeList);
+  }
+
+  selectThis(item) {
+    console.log(item);
+    for (let time of this.timeList) {
+      time.selected = false;
+      if (time.value === item.value) {
+        time.selected = true;
+      }
+    }
   }
 
   close() {

@@ -19,6 +19,10 @@
     .time-item {
       padding: 5px 25px;
       cursor: pointer;
+      &.selected {
+        border: 1px solid $primary;
+        border-radius: 50px;
+      }
     }
   }
 

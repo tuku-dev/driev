@@ -5,7 +5,7 @@ import { LoginModule } from "./modals/login/login.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { KYCComponent } from './pages/kyc/kyc.component';
+import { KYCComponent } from "./pages/kyc/kyc.component";
 import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
