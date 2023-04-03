@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://ne12qy-4000.csb.app/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

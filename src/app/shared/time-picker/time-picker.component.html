@@ -4,7 +4,9 @@
   <div class="show-the-time mt-4">{{ theTime }} hrs</div>
 
   <div class="time-list mb-4">
-    <span class="time-item" *ngFor="let time of timeList">{{ time }}</span>
+    <ng-container *ngFor="let time of timeList">
+      <span class="time-item" [ngClass]="{'selected':time.selected}"  (click)="selectThis(time)">{{ time.value }}</span>
+    </ng-container>
   </div>
 
   <p class="text-center text-danger small mb-4">
