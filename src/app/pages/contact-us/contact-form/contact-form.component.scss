@@ -1,0 +1,58 @@
+@import "../../../../assets/_scss/variables";
+.form-container {
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    @media screen and (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+    }
+    .input-form {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    .input-name,
+    .input-email,
+    .input-mobile {
+      .form-control {
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        border-radius: $radius;
+        line-height: 2.334;
+        padding: 10px 15px;
+        border: none;
+      }
+    }
+    .input-email {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .input-mobile {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+    .input-message {
+      grid-column: 2/3;
+      grid-row: 1/4;
+      textarea {
+        height: 100%;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        border-radius: $radius;
+        padding: 10px 15px;
+        border: none;
+        min-height: 10em;
+      }
+    }
+    .button-submit {
+      grid-column: 2/3;
+      grid-row: 4/5;
+      margin-left: auto;
+      align-items: start;
+      @media screen and (max-width: 991px) {
+        margin-right: auto;
+      }
+    }
+  }
+}

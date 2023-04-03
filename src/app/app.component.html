@@ -1,0 +1,9 @@
+<header class="bg-white page-header" *ngIf="currentRout != '/404'">
+  <app-header></app-header>
+</header>
+<div class="page-body">
+  <router-outlet></router-outlet>
+</div>
+<footer *ngIf="currentRout != '/404' && currentRout != '/payment-success'">
+  <app-footer></app-footer>
+</footer>

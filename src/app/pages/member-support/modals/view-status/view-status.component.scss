@@ -1,0 +1,39 @@
+.status-list-container {
+  .page-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .booking-list {
+    .table-names {
+      display: grid;
+      grid-template-columns: 100px repeat(2, 1fr) 150px;
+      align-items: center;
+      padding: 10px;
+    }
+    .table-values {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .table-row {
+        display: grid;
+        grid-template-columns: 100px repeat(2, 1fr) 150px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .not-found {
+    button {
+      max-width: 33.333333%;
+      width: 100%;
+      @media screen and (max-width: 991px) {
+        max-width: 50%;
+      }
+    }
+  }
+}

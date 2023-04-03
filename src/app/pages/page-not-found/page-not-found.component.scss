@@ -1,0 +1,23 @@
+@import "../../../assets/_scss/variables";
+.page-not-found {
+  height: 100vh;
+  .oops,
+  .bike {
+    margin-bottom: -70px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    color: $quaternary;
+  }
+  .error {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0.15px;
+    color: $danger;
+  }
+}

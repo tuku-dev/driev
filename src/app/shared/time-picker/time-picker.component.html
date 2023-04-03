@@ -1,0 +1,33 @@
+<div class="modal-body">
+  <a href=""></a>
+  <div class="text-center small font-weight-bold">Select Date</div>
+  <div class="show-the-time mt-4">{{ theTime }} hrs</div>
+
+  <div class="time-list mb-4">
+    <span class="time-item" *ngFor="let time of timeList">{{ time }}</span>
+  </div>
+
+  <p class="text-center text-danger small mb-4">
+    Pick-up and Drop-off time is limited between 09:00 hrs to 20:00 hrs.
+  </p>
+
+  <div class="actions text-end">
+    <a
+      href="javascript: void(0)"
+      (click)="close()"
+      class="text-primary text-decoration-none d-inline-block px-2"
+      >Cancel</a
+    >
+    <a
+      href="javascript: void(0)"
+      class="text-primary text-decoration-none d-inline-block px-2"
+      >Next</a
+    >
+    <a
+      href="javascript: void(0)"
+      class="text-primary text-decoration-none d-inline-block px-2"
+      (click)="ok()"
+      >Ok</a
+    >
+  </div>
+</div>

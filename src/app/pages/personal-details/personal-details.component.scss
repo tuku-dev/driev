@@ -1,0 +1,41 @@
+@import "../../../assets/_scss/variables";
+@import "../../../assets/_scss/mixins";
+
+.personal-details-container {
+  .profile-image-section {
+    .image-container {
+      margin-bottom: 15px;
+    }
+    .image-actions {
+      .change-image,
+      .close-uploader,
+      .delete-image {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        img {
+          max-width: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .setup-form {
+    .control-container {
+      .form-label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.1px;
+        color: $quaternary;
+      }
+    }
+    .submit-button {
+      min-width: 250px;
+      .button {
+        @include hover($tertiary, $primary, $primary);
+      }
+    }
+  }
+}

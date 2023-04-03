@@ -1,0 +1,59 @@
+@import "../../../../assets/_scss/variables";
+.three-cards {
+  .keen-slider {
+    @media screen and (min-width: 1400px) {
+      gap: 20px;
+    }
+    .card {
+      background: $primary-light;
+      text-align: center;
+      position: relative;
+      padding-top: 100px;
+      margin-top: 40px;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      border-radius: $radius;
+      gap: 4.5em;
+      > img {
+        position: absolute;
+        top: -50px;
+        left: 40px;
+      }
+      h3 {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28px;
+        color: $secondary;
+      }
+      @media screen and (max-width: 1399px) {
+        margin-top: 50px;
+      }
+    }
+
+    + .dots {
+      @media screen and (min-width: 1400px) {
+        display: none;
+      }
+      text-align: center;
+      margin-top: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 13px;
+        padding: 0;
+        background: $quaternary;
+        transition: width 0.3s ease-in-out;
+        -webkit-appearance: media-slider;
+        &.active {
+          width: 23px;
+          background: $primary;
+        }
+      }
+    }
+  }
+}

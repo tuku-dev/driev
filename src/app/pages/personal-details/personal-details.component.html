@@ -1,0 +1,159 @@
+<div class="personal-details-container border member-content">
+  <div class="profile-image-section">
+    <div class="image-container">
+      <img
+        src="{{ assetPath }}imgs/profile-image.png"
+        alt=""
+        class="d-block mx-auto"
+        style="max-width: 107px"
+      />
+    </div>
+    <div
+      class="image-actions d-flex align-items-center justify-content-center gap-3"
+    >
+      <div
+        class="change-image"
+        *ngIf="cancelUpload === 0"
+        (click)="cancelUpload = 1"
+      >
+        <img src="{{ assetPath }}imgs/Edit-option.png" alt="" />
+        <span>Change Image</span>
+      </div>
+      <div
+        class="close-uploader"
+        *ngIf="cancelUpload"
+        (click)="cancelUpload = 0"
+      >
+        <img src="{{ assetPath }}imgs/close-dark.png" alt="" />
+        <span>Cancel</span>
+      </div>
+      <div class="delete-image">
+        <img src="{{ assetPath }}imgs/Delete.png" alt="" />
+        <span>Delete Image</span>
+      </div>
+    </div>
+  </div>
+  <div class="profile-form-section">
+    <form
+      class="setup-form d-flex flex-column gap-3"
+      [formGroup]="settingUpForm"
+    >
+      <div class="control-container mb-5">
+        <div class="form-group mb-3">
+          <label for="fullName" class="form-label">Full name </label>
+          <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            formControlName="fullName"
+            class="form-control"
+          />
+          <div
+            *ngIf="submitted && f.fullName.errors"
+            class="invalid-feedback d-block"
+          >
+            <div *ngIf="f.fullName.errors.required">Please Enter Name</div>
+            <div *ngIf="f.fullName.errors.pattern">Please Enter Valid Name</div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="emailId" class="form-label">Email </label>
+          <input
+            type="text"
+            name="emailId"
+            id="emailId"
+            formControlName="emailId"
+            class="form-control varified"
+          />
+          <div
+            *ngIf="submitted && f.emailId.errors"
+            class="invalid-feedback d-block"
+          >
+            <div *ngIf="f.emailId.errors.required">
+              Please Enter Email Address
+            </div>
+            <div *ngIf="f.emailId.errors.pattern">
+              Please Enter a Valid Email Address
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="phoneNumber" class="form-label">Phone Number</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber"
+            formControlName="phoneNumber"
+            class="form-control valid-input varified"
+          />
+          <div
+            *ngIf="submitted && f.phoneNumber.errors"
+            class="invalid-feedback d-block"
+          >
+            <div *ngIf="f.phoneNumber.errors">Please Enter Valid Phone</div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="occupation" class="form-label">Occupation </label>
+          <div class="container">
+            <div class="row">
+              <div class="col-6 ps-0">
+                <select
+                  name="occupation"
+                  id="occupation"
+                  class="form-select"
+                  formControlName="occupation"
+                >
+                  <option value="">Select</option>
+                  <option value="student">Student</option>
+                  <option value="corporate-employee">Corporate Employee</option>
+                  <option value="government-employee">
+                    Governement Employee
+                  </option>
+                  <option value="self-employee">Self Employee</option>
+                  <option value="others">Others</option>
+                </select>
+                <div
+                  *ngIf="submitted && f.occupation.errors"
+                  class="invalid-feedback d-block"
+                >
+                  <div *ngIf="f.emailId.errors.required">
+                    Please select occupation
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-0">
+                <input
+                  type="text"
+                  name="occupationName"
+                  id="occupationName"
+                  formControlName="occupationName"
+                  class="form-control"
+                  placeholder="Type your organization name"
+                />
+                <div
+                  *ngIf="submitted && f.occupationName.errors"
+                  class="invalid-feedback d-block"
+                >
+                  <div *ngIf="f.emailId.errors.required">
+                    Please select occupationName
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-button mx-auto">
+        <button
+          type="button"
+          class="button border send-otp w-100 d-block mb-3 mx-auto"
+          (click)="submitSetupForm()"
+        >
+          Save Changes
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

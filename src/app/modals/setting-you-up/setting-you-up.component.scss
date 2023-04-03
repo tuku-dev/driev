@@ -1,0 +1,105 @@
+@import "../../../assets/_scss/_variables";
+@import "../../../assets/_scss/_mixins";
+.setup-container {
+  position: relative;
+  .btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .setup-form {
+    .setup-your-ac {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: 0.15px;
+      + p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.25px;
+      }
+    }
+    .setup-form {
+      .file-upload-container {
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.4px;
+          color: $quaternary;
+        }
+        .upload-section {
+          .file-upload {
+            background: url("../../../assets/imgs/Upload-Image.png") no-repeat center top 30% #fff;
+            @include min-square(113px);
+            @include max-square(113px);
+            box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+            border-radius: 10px;
+            margin-bottom: $radius;
+            @media screen and (max-width: 991px) {
+              @include min-square(82px);
+              @include max-square(82px);
+            }
+          }
+        }
+        .preview-section {
+          .button {
+            color: $quaternary;
+            font-size: 12px;
+            @include hover($tertiary, $primary, $primary);
+          }
+        }
+      }
+      .control-container {
+        label.form-label {
+          display: block;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.25px;
+          color: $quaternary;
+          span {
+            font-size: 80%;
+          }
+        }
+        .form-control {
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+          border-color: transparent;
+          &.valid-input {
+            border: 1px solid $primary;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+          }
+          &::placeholder {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.4px;
+            color: $quaternary-light;
+          }
+        }
+        .form-select {
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+          border-color: transparent;
+          option {
+            &:hover {
+              background-color: $primary;
+            }
+          }
+          &.valid-input {
+            border: 1px solid $primary;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+          }
+        }
+      }
+      .submit-button {
+        .button {
+          max-width: 50%;
+          @include hover($tertiary, $primary, $primary);
+        }
+      }
+    }
+  }
+}

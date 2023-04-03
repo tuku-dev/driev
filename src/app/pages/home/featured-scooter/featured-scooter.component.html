@@ -1,0 +1,38 @@
+<div class="featured-scooter">
+  <div class="container px-1 py-4">
+    <h2 class="section-title-1 text-center">Featured Electric Scooter</h2>
+    <p class="text-center pb-3">
+      We offer luxurious EV's at affordable rental price.
+    </p>
+    <div class="scooter-slider mt-5">
+      <div class="navigation-wrapper">
+        <div class="keen-slider keen-slider--vertical" #featuredSlider>
+          <div
+            class="keen-slider__slide number-slide{{ i }} text-center"
+            *ngFor="let slide of featuredList; let i = index"
+          >
+            <div class="img-container">
+              <!-- <img src="{{ slide.imgUrl }}" *ngIf="slide.imgUrl" alt="" /> -->
+              <img
+                src="../../../../assets/imgs/featured-scooter-1.png"
+                alt=""
+                class="img-fluid bike-image"
+              />
+            </div>
+            <div class="featured-name mb-4">{{ slide.name }}</div>
+            <ul class="featured-details">
+              <li *ngFor="let item of slide.details">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="dots">
+        <button
+          (click)="slider.moveToIdx(i)"
+          *ngFor="let slide of dotHelper; let i = index"
+          [class]="'dot ' + (i === currentSlide ? 'active' : '')"
+        ></button>
+      </div>
+    </div>
+  </div>
+</div>

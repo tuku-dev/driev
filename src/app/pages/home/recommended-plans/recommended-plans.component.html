@@ -1,0 +1,42 @@
+<div class="recommended-section-container">
+  <p class="text-white">Recommended Plans</p>
+  <div class="plans d-flex keen-slider" #sliderRef>
+    <div
+      class="plan-item p-3 pb-3 pb-lg-5 keen-slider__slide number-slide{{ i }}"
+      *ngFor="let plan of plans; let i = index"
+    >
+      <div class="plan-image">
+        <img src="{{ plan.imgUrl }}" *ngIf="plan.imgUrl" alt="" />
+        <img
+          src="../../../../assets/imgs/recommended-bike.png"
+          *ngIf="!plan.imgUrl"
+          alt=""
+        />
+      </div>
+      <ul class="plan-details d-flex flex-column">
+        <li *ngFor="let item of plan.details">{{ item }}</li>
+      </ul>
+      <div class="speed-column">
+        <div class="speed-section">{{ plan.speed }}</div>
+        <div class="price-per-duration">
+          {{ plan.price }}/{{ plan.duration }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dots">
+    <button
+      (click)="slider.moveToIdx(i)"
+      *ngFor="let slide of dotHelper; let i = index"
+      [class]="'dot ' + (i === currentSlide ? 'active' : '')"
+    ></button>
+  </div>
+  <!-- <div class="keen-slider" #sliderRef>
+    <div class="keen-slider__slide number-slide1">1</div>
+    <div class="keen-slider__slide number-slide2">2</div>
+    <div class="keen-slider__slide number-slide3">3</div>
+    <div class="keen-slider__slide number-slide4">4</div>
+    <div class="keen-slider__slide number-slide5">5</div>
+    <div class="keen-slider__slide number-slide6">6</div>
+  </div> -->
+</div>

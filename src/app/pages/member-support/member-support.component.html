@@ -1,0 +1,42 @@
+<div class="member-support-container border member-content h-100">
+  <div class="d-flex flex-column align-item-center content-section">
+    <div class="page-title text-primary text-center">Support</div>
+    <div
+      class="cards d-flex align-items-center gap-5 justify-content-center flex-column flex-md-row"
+    >
+      <div
+        class="card bg-primary-light border-0 p-3 d-flex flex-column gap-3 text-primary"
+        (click)="openBookingList()"
+      >
+        <img
+          src="{{ assetPath }}imgs/Raise-Issue.png"
+          alt="Raise an issue"
+          class="img-fluid d-block mx-auto"
+        />
+        Raise An Issue
+      </div>
+      <div
+        class="card bg-primary-light border-0 p-3 d-flex flex-column gap-3 text-primary"
+        (click)="viewStatus()"
+      >
+        <img
+          src="{{ assetPath }}imgs/status-notification.svg"
+          alt="Notification"
+          class="status-notification"
+        />
+        <img
+          src="{{ assetPath }}imgs/Memo.png"
+          alt="Raise an issue"
+          class="img-fluid d-block mx-auto"
+        />
+        View Status
+      </div>
+    </div>
+    <p class="text-center">
+      If there is something more feel free to reach out to us on
+      <a href="tel:+919439099990" class="text-primary text-decoration-none"
+        >+91 9439099990</a
+      >
+    </p>
+  </div>
+</div>

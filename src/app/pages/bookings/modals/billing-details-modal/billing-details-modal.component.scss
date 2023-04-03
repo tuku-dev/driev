@@ -1,0 +1,72 @@
+@import "../../../../../assets/_scss/variables";
+
+.billing-details-container {
+  .section-title {
+    position: relative;
+    .bottom-border {
+      position: absolute;
+      top: 100%;
+      width: 50px;
+      height: 4px;
+      left: 2px;
+      border-radius: 5px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 4px;
+        border-radius: 5px;
+        left: 58px;
+      }
+      &::after {
+        left: 88px;
+        width: 19px;
+      }
+    }
+    &.text-primary {
+      color: $primary;
+      .bottom-border {
+        background-color: $primary;
+        &::before,
+        &::after {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
+  .billing-details {
+    max-width: 450px;
+    .title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: 0.15px;
+      color: $secondary;
+    }
+    .list {
+      padding-left: 0;
+      li {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        letter-spacing: 0.15px;
+        gap: 15px;
+        .key {
+          color: $quaternary;
+        }
+        .value {
+          columns: $secondary;
+        }
+      }
+    }
+    .proceed-to-payment {
+      max-width: 90%;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="confirmation-container pt-5 pb-5 px-3">
+  <a href=""></a>
+  <!-- This Anchor tag is used to divert autofocus from button-->
+  <img [src]="content.modalImage" alt="" class="img-fluid d-block mx-auto" />
+  <div class="modal-title">{{ content.title }}</div>
+  <div class="modal-description">{{ content.description }}</div>
+  <div class="modal-buttons">
+    <ng-container *ngFor="let button of content.buttons">
+      <button
+        [classList]="button.btnClasses"
+        (click)="button.action === 'submit' ? submit() : close()"
+      >
+        {{ button.name }}
+      </button>
+    </ng-container>
+  </div>
+</div>

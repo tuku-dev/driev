@@ -1,0 +1,40 @@
+<div class="customers-feedback">
+  <div class="container px-1">
+    <h2 class="section-title-1 text-center mb-3">Customer's Feedback</h2>
+    <p class="text-center">Our customer's review</p>
+  </div>
+  <div class="container-fluid mt-3 mt-md-5 pt-3">
+    <div class="feedback-list keen-slider" #feedbackSlider>
+      <div
+        class="keen-slider__slide number-slide{{ i }} feedback-item py-1"
+        *ngFor="let item of feedbackList; let i = index"
+      >
+        <div class="bg-white d-flex flex-column gap-3 item-container p-3">
+          <div class="d-flex gap-2">
+            <div class="image-container">
+              <img src="{{ item.imgUrl }}" *ngIf="item.imgUrl" alt="" />
+              <span *ngIf="!item.imgUrl">Image</span>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="customer-name">{{ item.name }}</div>
+              <div class="customer-location">{{ item.location }}</div>
+              <div class="customer-rating">
+                <ng-container *ngFor="let it of fullRating; let i = index">
+                  <img
+                    src="{{ assetPath }}imgs/star-filled.svg"
+                    alt=""
+                    *ngIf="i < item.rating; else elseBlock"
+                  />
+                  <ng-template #elseBlock>
+                    <img src="{{ assetPath }}imgs/star-blank.svg" alt="" />
+                  </ng-template>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <p class="customer-message">{{ item.feedback }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

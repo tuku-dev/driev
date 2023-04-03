@@ -1,0 +1,67 @@
+@import ".././../../assets/_scss/variables";
+@import ".././../../assets/_scss/mixins";
+
+.section-title {
+  position: relative;
+  .bottom-border {
+    position: absolute;
+    top: 100%;
+    width: 82px;
+    height: 5px;
+    left: 2px;
+    border-radius: 5px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 43px;
+      height: 5px;
+      border-radius: 5px;
+      left: 88px;
+    }
+    &::after {
+      left: 137px;
+      width: 19px;
+    }
+  }
+  &.text-primary {
+    color: $primary;
+    .bottom-border {
+      background-color: $primary;
+      &::before,
+      &::after {
+        background-color: $primary;
+      }
+    }
+  }
+  &.text-secondary {
+    color: $secondary;
+    .bottom-border {
+      background-color: $secondary;
+      &::before,
+      &::after {
+        background-color: $secondary;
+      }
+    }
+  }
+  &.text-tertiary {
+    color: $tertiary;
+    .bottom-border {
+      background-color: $tertiary;
+      &::before,
+      &::after {
+        background-color: $tertiary;
+      }
+    }
+  }
+  &.text-quaternary {
+    color: $quaternary;
+    .bottom-border {
+      background-color: $quaternary;
+      &::before,
+      &::after {
+        background-color: $quaternary;
+      }
+    }
+  }
+}

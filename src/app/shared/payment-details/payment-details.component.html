@@ -1,0 +1,39 @@
+<div class="payment-details-container p-4 position-relative">
+  <div class="modal-title text-center mb-4">Payment Details</div>
+  <div class="detail-list">
+    <div class="name text-quaternary">Plan Type</div>
+    <div class="value">
+      {{ _hasData(paymentDetails["planType"]) }}
+    </div>
+    <div class="name text-quaternary">Rental Type</div>
+    <div class="value">{{ _hasData(paymentDetails["rentalType"]) }}</div>
+    <div class="name text-quaternary">Date & Time</div>
+    <div class="value">{{ _hasData(paymentDetails["dated"]) }}</div>
+    <div class="name text-quaternary">Delivery Type</div>
+    <div class="value">{{ _hasData(paymentDetails["deliveryType"]) }}</div>
+    <div class="name text-quaternary">Helmet</div>
+    <div class="value">{{ _hasData(paymentDetails["helmet"]) }}</div>
+    <div class="name text-quaternary">Battery</div>
+    <div class="value">{{ _hasData(paymentDetails["battery"]) }}</div>
+    <div class="name text-quaternary">Deliver Charges</div>
+    <div class="value">{{ _hasData(paymentDetails["deliverCharges"]) }}</div>
+    <div class="name text-quaternary">Plan Price</div>
+    <div class="value">{{ _hasData(paymentDetails["planPrice"]) }}</div>
+    <div class="name text-quaternary">Battery Charges</div>
+    <div class="value">{{ _hasData(paymentDetails["batteryCharges"]) }}</div>
+    <div class="name text-quaternary">Helment Charges</div>
+    <div class="value">{{ _hasData(paymentDetails["helmetCharges"]) }}</div>
+    <div class="name text-quaternary">
+      Sub Total <small class="text-quaternary-light">(GST 5% included)</small>
+    </div>
+    <div class="value">{{ _hasData(paymentDetails["subTotal"]) }}</div>
+    <div class="name text-quaternary">Refundable Security Deposit</div>
+    <div class="value">{{ _hasData(paymentDetails["refundAmount"]) }}</div>
+    <div class="name text-secondary">Total Amount</div>
+    <div class="value">{{ _hasData(paymentDetails["totalAmount"]) }}</div>
+  </div>
+  <a href="javascript: void(0)" class="mail-me position-absolute">
+    <img src="../../../assets/imgs/Send-email.png" alt="" class="img-fluid" />
+  </a>
+  <button class="button button-primary w-100 mt-5">Okay !!</button>
+</div>

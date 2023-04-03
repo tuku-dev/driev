@@ -1,0 +1,12 @@
+<div class="filter-container">
+  <div class="d-flex flex-column py-4 px-5 gap-4">
+    <a
+      href="javascript: void(0)"
+      *ngFor="let item of filters"
+      (click)="sendValue(item)"
+      class="text-secondary"
+    >
+      {{ item.name }}
+    </a>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="form-container pb-5">
+  <form id="contactForm" class="contact-form">
+    <div class="input-name">
+      <input class="form-control" id="name" type="text" placeholder="Name" />
+    </div>
+    <div class="input-email">
+      <input class="form-control" id="email" type="email" placeholder="Email" />
+    </div>
+    <div class="input-mobile">
+      <input
+        class="form-control"
+        id="mobileNumber"
+        type="text"
+        placeholder="Mobile Number"
+      />
+    </div>
+    <div class="input-message">
+      <textarea
+        class="form-control"
+        id="typeYourMesageHere"
+        type="text"
+        placeholder="Type your mesage here..."
+      ></textarea>
+    </div>
+    <div class="button-submit">
+      <button
+        class="button button-primary px-5 py-2"
+        id="submitButton"
+        type="submit"
+        (click)="submit()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

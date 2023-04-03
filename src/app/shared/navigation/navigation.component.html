@@ -1,0 +1,54 @@
+<!-- Nav tabs -->
+
+<!-- blank anchor tag for remove bootstrap autofocus -->
+<a href=""></a>
+
+<img
+  src="../../../assets/imgs/driEV.svg"
+  alt=""
+  class="d-block img-fluid mx-auto mt-5 mb-5 d-block d-lg-none"
+/>
+
+<div class="partner-with-us d-lg-none d-block mb-5 text-center">
+  <a
+    [routerLink]="['/partner-with-us']"
+    class="button button-primary rounded-pill px-4"
+    >Partner with us</a
+  >
+</div>
+
+<ul
+  class="nav d-flex align-items-start align-items-lg-center flex-column flex-lg-row"
+  id="navId"
+  role="tablist"
+>
+  <li class="nav-item" *ngFor="let nav of navs">
+    <a
+      [routerLink]="[nav.link]"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav-link"
+      (click)="close()"
+      >{{ nav.name }}</a
+    >
+  </li>
+  <li class="nav-item d-none d-lg-block">
+    <a
+      href="javascript: void(0)"
+      class="nav-link"
+      *ngIf="!isLoggedIn"
+      (click)="openLoginModal()"
+      >Login/Signup</a
+    >
+    <a
+      href="javascript: void(0)"
+      class="nav-link p-0"
+      *ngIf="isLoggedIn"
+      (click)="openProfileMenus()"
+      ><img
+        src="../../../assets/imgs/user-avtar.png"
+        alt=""
+        class="rounded-circle"
+    /></a>
+  </li>
+</ul>

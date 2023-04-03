@@ -1,0 +1,122 @@
+<div class="login-container mb-5 py-5">
+  <app-page-title
+    [titleData]="{ title: 'Login', className: 'text-tertiary' }"
+  ></app-page-title>
+
+  <div class="modal-content bg-white p-3 d-flex flex-column text-center">
+    <button
+      type="button"
+      class="btn-close d-block ms-auto"
+      (click)="close()"
+    ></button>
+    <div class="login-form d-flex flex-column text-center">
+      <div class="top-section">
+        <div class="setup-your-ac mt-4 mb-3">Setup your account</div>
+        <p class="text-quaternary">
+          Please enter your mobile number to proceed
+        </p>
+        <form [formGroup]="loginForm" *ngIf="section === 1">
+          <div class="mobile-input mx-auto mb-3 mt-5">
+            <span
+              class="plus91 d-flex align-items-center justify-content-center"
+              >+91</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="contactNumber"
+              name="contactNumber"
+              placeholder="Enter your mobile number"
+            />
+          </div>
+          <div
+            *ngIf="submitted && f.contactNumber.errors"
+            class="invalid-feedback d-block"
+          >
+            <div *ngIf="f.contactNumber.errors">Please Enter Valid Number</div>
+          </div>
+        </form>
+        <form [formGroup]="otpForm" *ngIf="section === 2" class="otp-form">
+          <div class="otp-input-container justify-content-center mb-3 mt-5">
+            <div class="form-group">
+              <input
+                #formRow
+                type="number"
+                formControlName="input1"
+                class="form-control w-100 text-center"
+                maxlength="1"
+                (keyup)="keyUpEvent($event, 1)"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                #formRow
+                type="number"
+                formControlName="input2"
+                class="form-control w-100 text-center"
+                maxlength="1"
+                (keyup)="keyUpEvent($event, 2)"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                #formRow
+                type="number"
+                formControlName="input3"
+                class="form-control w-100 text-center"
+                maxlength="1"
+                (keyup)="keyUpEvent($event, 3)"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                #formRow
+                type="number"
+                formControlName="input4"
+                class="form-control w-100 text-center"
+                maxlength="1"
+                (keyup)="keyUpEvent($event, 4)"
+              />
+            </div>
+          </div>
+          <div
+            *ngIf="
+              otpSubmitted &&
+              (f1.input1.errors ||
+                f1.input2.errors ||
+                f1.input3.errors ||
+                f1.input4.errors)
+            "
+            class="invalid-feedback d-block"
+          >
+            <div>Please enter the OTP</div>
+          </div>
+        </form>
+        <p class="text-quaternary">OTP will be sent to this number.</p>
+      </div>
+      <div class="bottom-section">
+        <p class="text-center">
+          By continuing, you have read and agreed to the<br />
+          <a href="" [routerLink]="['/privacy-policy']">terms and conditions</a
+          >.
+        </p>
+        <button
+          type="button"
+          class="button border send-otp w-100 d-block mb-3"
+          (click)="sendOtp()"
+          *ngIf="section === 1"
+        >
+          Send OTP
+        </button>
+        <button
+          type="button"
+          class="button border send-otp w-100 d-block mb-3"
+          (click)="verifyOtp()"
+          *ngIf="section === 2"
+        >
+          Verify
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

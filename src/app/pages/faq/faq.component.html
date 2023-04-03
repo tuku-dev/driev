@@ -1,0 +1,21 @@
+<div class="faq-container mb-5 py-5">
+  <div class="container px-1">
+    <app-page-title
+      [titleData]="{ title: 'FAQs', className: 'text-primary' }"
+    ></app-page-title>
+
+    <div class="faq-accordions">
+      <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel
+          id="toggle-{{ i + 1 }}"
+          [title]="faq.title"
+          *ngFor="let faq of faqList; let i = index"
+        >
+          <ng-template ngbPanelContent>
+            {{ faq.description }}
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+</div>

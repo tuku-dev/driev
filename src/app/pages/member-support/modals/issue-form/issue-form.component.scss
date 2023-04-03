@@ -1,0 +1,73 @@
+@import "../../../../../assets/_scss/variables";
+@import "../../../../../assets/_scss/mixins";
+
+.issue-form-container {
+  .form-container {
+    input,
+    select,
+    textarea {
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.25px;
+      }
+    }
+    .form-label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.1px;
+      margin-bottom: 8px;
+    }
+    .type-issue {
+      width: 50%;
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
+      .form-group {
+        width: calc(50% - 0.5rem);
+      }
+    }
+    .address-section {
+      width: 100%;
+      .form-group {
+        width: calc(50% - 0.5rem);
+        @media screen and (max-width: 991px) {
+          width: 100%;
+        }
+      }
+    }
+    .date-time-section {
+      .date-time-inputs {
+        .date-container,
+        .time-container {
+          position: relative;
+          width: calc(50% - 0.5rem);
+          .icon {
+            position: absolute;
+            @include max-square(20px);
+            margin-top: auto;
+            margin-bottom: auto;
+            top: 0;
+            bottom: 0;
+            left: 5px;
+          }
+          .choose-date,
+          .choose-time {
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+    .submit-button {
+      max-width: 33.3333%;
+      width: 100%;
+      color: $quaternary;
+      @include hover($tertiary, $primary, $primary);
+      @media screen and (max-width: px) {
+        max-width: 50%;
+      }
+    }
+  }
+}

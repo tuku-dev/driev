@@ -1,0 +1,65 @@
+<div class="about-us-container">
+  <div class="container px-1 pt-4">
+    <app-page-title
+      [titleData]="{ title: 'About Us', className: 'text-primary' }"
+    ></app-page-title>
+  </div>
+  <div class="about-us-slider pb-3 mb-5">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)"
+    >
+      <div ngxSlickItem class="slide">
+        <img
+          src="{{ assetPath }}imgs/about-us-slider-1.png"
+          alt=""
+          class="img-fluid mx-auto"
+        />
+      </div>
+      <div ngxSlickItem class="slide">
+        <img
+          src="{{ assetPath }}imgs/about-us-slider-1.png"
+          alt=""
+          class="img-fluid mx-auto"
+        />
+      </div>
+      <div ngxSlickItem class="slide">
+        <img
+          src="{{ assetPath }}imgs/about-us-slider-1.png"
+          alt=""
+          class="img-fluid mx-auto"
+        />
+      </div>
+      <div ngxSlickItem class="slide">
+        <img
+          src="{{ assetPath }}imgs/about-us-slider-1.png"
+          alt=""
+          class="img-fluid mx-auto"
+        />
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  <div class="container px-1 mb-5">
+    <p class="text-quaternary">
+      driEV is an EV bike sharing company based in Bhubaneswar with a vision of
+      making urban commute affordable and sustainable. We are the 1st EV bike
+      sharing start-up in eastern India providing smart mobility options with
+      zero tailpipe emissions. Born at the peak of the pandemic, we have kept
+      scaling new heights throughout the tough times.driEV bikes are embedded
+      with latest technologies to provide the greatest user experience by
+      monitoring the various parameters of the bike like, speed, mileage,
+      location and battery percentage, so the customers just cruise along. driEV
+      also provides micro services such as helmets,zero insurance hassles and No
+      Maintenance worries on renting EVs and anything that provides a better
+      user experience. Our vision is to make urban commute accessible,
+      affordable and sustainable, what is currently a start-up is prepped to
+      scale to make ownership of two-wheelers redundant by being just a click
+      away for customers, no matter how unique their demands are.
+    </p>
+  </div>
+</div>

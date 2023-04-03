@@ -1,0 +1,92 @@
+@import "./variables";
+@import "./mixins";
+.button {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $secondary;
+  background: $tertiary;
+  border: 1px solid $tertiary;
+  border-radius: 0.375rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 1px rgba(0, 0, 0, 0.075);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  @include hover(
+    $tertiary,
+    mix($secondary, $tertiary, 90%),
+    mix($secondary, $tertiary, 90%)
+  );
+  &.button-primary {
+    @include button-primary();
+  }
+  &.button-secondary {
+    @include button-secondary();
+  }
+  &.button-tertiary {
+    @include button-tertiary();
+  }
+}
+
+.bg-primary {
+  background: $primary !important;
+}
+.bg-primary-light {
+  background: $primary-light !important;
+}
+.bg-secondary {
+  background: $secondary !important;
+}
+.bg-tertiary {
+  background: $tertiary !important;
+}
+.bg-quaternary {
+  background: $quaternary !important;
+}
+.bg-quaternary-light {
+  background: $quaternary-light !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+.text-primary-light {
+  color: $primary-light !important;
+}
+.text-secondary {
+  color: $secondary !important;
+}
+.text-tertiary {
+  color: $tertiary !important;
+}
+.text-quaternary {
+  color: $quaternary !important;
+}
+.text-quaternary-light {
+  color: $quaternary-light !important;
+}
+.text-danger {
+  color: $danger !important;
+}
+.box-shadow {
+  box-shadow: $boxShadow;
+}
+.radius {
+  border-radius: $radius;
+}
+.form-control {
+  &.varified {
+    background-image: url("../../assets/imgs/Circle-tick-1.png");
+    background-position: center right 10px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 20px;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="document-required-container mb-5 py-5">
+  <div class="container px-1">
+    <app-page-title
+      [titleData]="{ title: 'Document for KYC', className: 'text-primary' }"
+    ></app-page-title>
+
+    <div class="kyc-list-container">
+      <div class="kyc-item p-3" *ngFor="let kyc of documentsRequired">
+        <div class="kyc-icon">
+          <img [src]="kyc.image" alt="" class="img-fluid d-block mx-auto" />
+        </div>
+        <div class="kyc-title text-center text-primary">{{ kyc.title }}</div>
+        <ul class="kyc-details">
+          <li *ngFor="let item of kyc.detailList">{{ item }}</li>
+        </ul>
+        <div class="kyc-description text-center">{{ kyc.shortDesc }}</div>
+      </div>
+    </div>
+  </div>
+</div>

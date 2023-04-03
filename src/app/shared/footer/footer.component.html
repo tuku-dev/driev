@@ -1,0 +1,62 @@
+<div class="footer bg-primary">
+  <div class="container px-1">
+    <div class="footer-sections">
+      <div class="logo">
+        <img src="../../../assets/imgs/driev-white.svg" alt="" />
+      </div>
+      <div class="social-links">
+        <h4>Social links</h4>
+        <nav class="nav">
+          <a
+            class="nav-link {{ item.className }}"
+            style="font-size: 0"
+            *ngFor="let item of socialLinks"
+            [routerLink]="[item.link]"
+            >{{ item.name }}</a
+          >
+        </nav>
+      </div>
+      <div class="subscription">
+        <app-subscription></app-subscription>
+      </div>
+      <div class="quick-links">
+        <h4>Quick links</h4>
+        <nav class="nav flex-column">
+          <a
+            class="nav-link"
+            *ngFor="let item of quickLinks"
+            [routerLink]="[item.link]"
+            >{{ item.name }}</a
+          >
+        </nav>
+      </div>
+      <div class="about-links">
+        <h4>About</h4>
+        <nav class="nav flex-column">
+          <a
+            class="nav-link"
+            *ngFor="let item of about"
+            [routerLink]="[item.link]"
+            >{{ item.name }}</a
+          >
+        </nav>
+      </div>
+      <div class="help-links">
+        <h4>Help</h4>
+        <nav class="nav flex-column">
+          <a
+            class="nav-link"
+            *ngFor="let item of help"
+            [routerLink]="[item.link]"
+            >{{ item.name }}</a
+          >
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="copyright bg-white pt-4 pb-2">
+  <p class="text-primary text-center">
+    Copyright @ 2023 Techsofin Pvt. Ltd. All rights reserved
+  </p>
+</div>

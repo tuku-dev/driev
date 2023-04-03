@@ -1,0 +1,123 @@
+@mixin square($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin min-square($w, $h: $w) {
+  min-width: $w;
+  min-height: $h;
+}
+@mixin max-square($w, $h: $w) {
+  max-width: $w;
+  max-height: $h;
+}
+@mixin hover($color, $bg, $bdr) {
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    color: $color;
+    background: $bg;
+    border-color: $bdr;
+  }
+}
+
+@mixin button-primary() {
+  color: $tertiary;
+  background: $primary;
+  border-color: $primary;
+  @include hover(
+    $tertiary,
+    mix($primary, $secondary, 90%),
+    mix($primary, $secondary, 90%)
+  );
+
+  &:focus {
+    box-shadow: rgb(48, 209, 15);
+  }
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  &:disabled,
+  &.disabled {
+    color: $tertiary;
+    background-color: $quaternary;
+    border-color: $quaternary;
+  }
+}
+
+@mixin button-secondary() {
+  color: $tertiary;
+  background: $secondary;
+  border-color: $secondary;
+  @include hover(
+    $tertiary,
+    mix($secondary, $tertiary, 90%),
+    mix($secondary, $tertiary, 90%)
+  );
+  &:focus {
+    box-shadow: rgb(48, 209, 15);
+  }
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  &:disabled,
+  &.disabled {
+    color: $tertiary;
+    background-color: $quaternary;
+    border-color: $quaternary;
+  }
+}
+
+@mixin button-tertiary() {
+  color: $primary;
+  background: $tertiary;
+  border-color: $tertiary;
+  @include hover(
+    $primary,
+    mix($tertiary, $primary, 90%),
+    mix($tertiary, $primary, 90%)
+  );
+  &:focus {
+    box-shadow: rgb(48, 209, 15);
+  }
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  &:disabled,
+  &.disabled {
+    color: $secondary;
+    background-color: $quaternary;
+    border-color: $quaternary;
+  }
+}
+
+@mixin section-title($color) {
+  .section-title {
+    position: relative;
+    .bottom-border {
+      position: absolute;
+      top: 100%;
+      width: 82px;
+      height: 5px;
+      left: 2px;
+      border-radius: 5px;
+      background: $color;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 43px;
+        height: 5px;
+        border-radius: 5px;
+        left: 88px;
+        background: $color;
+      }
+      &::after {
+        left: 137px;
+        width: 19px;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@import "../../../../../assets/_scss/variables";
+
+.topups-container {
+  .section-title-container {
+    .section-title {
+      position: relative;
+      .bottom-border {
+        position: absolute;
+        top: 100%;
+        width: 50px;
+        height: 4px;
+        left: 2px;
+        border-radius: 5px;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 25px;
+          height: 4px;
+          border-radius: 5px;
+          left: 58px;
+        }
+        &::after {
+          left: 88px;
+          width: 19px;
+        }
+      }
+      &.text-primary {
+        color: $primary;
+        .bottom-border {
+          background-color: $primary;
+          &::before,
+          &::after {
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+  .topups {
+    .topup-item {
+      width: 230px;
+      .title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.15px;
+      }
+      img {
+        max-width: 150px;
+      }
+      .kms {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.15px;
+      }
+      .price {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.25px;
+      }
+    }
+  }
+}

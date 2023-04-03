@@ -1,0 +1,48 @@
+<div class="booking-list-container p-5">
+  <img
+    src="{{ assetPath }}imgs/Raise-Issue.png"
+    alt=""
+    class="d-block mx-auto img-fluid mb-2"
+  />
+  <div class="page-title text-primary text-center mb-2">Raise An Issue</div>
+  <div class="page-description text-center text-quaternary mb-2">
+    Choose your booking
+  </div>
+
+  <div class="booking-list mt-5">
+    <div class="table-names">
+      <span></span>
+      <div class="date">Date</div>
+      <div class="transaction-id">Booking Id</div>
+      <div class="status text-end">Status</div>
+    </div>
+    <div class="table-values">
+      <div
+        class="table-row"
+        *ngFor="let item of bookingList"
+        (click)="selectThis(item)"
+      >
+        <div class="img-container">
+          <img
+            src="{{ assetPath }}imgs/booking-bike.png"
+            alt=""
+            class="img-fluid"
+          />
+        </div>
+        <div class="date">{{ item.dated | date : "dd MMM YYYY" }}</div>
+        <div class="transaction-id">{{ item.bookingId }}</div>
+        <div class="status text-end text-capitalize">
+          <span
+            [ngClass]="{
+              'text-primary': item.status === 'Active',
+              'text-warning': item.status === 'Upcoming',
+              'text-info': item.status === 'Completed',
+              'text-danger': item.status === 'Cancelled'
+            }"
+            >{{ item.status }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

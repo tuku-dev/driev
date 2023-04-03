@@ -1,0 +1,128 @@
+<div class="privacy-policy-container mb-5 py-5">
+  <div class="container px-1">
+    <app-page-title
+      [titleData]="{ title: 'Privacy Policy', className: 'text-primary' }"
+    ></app-page-title>
+    <p>
+      driEV is an EV bike sharing company based in Bhubaneswar with a vision of
+      making urban commute affordable and sustainable. We are the 1st EV bike
+      sharing start-up in eastern India providing smart mobility options with
+      zero tailpipe emissions. Born at the peak of the pandemic, we have kept
+      scaling new heights throughout the tough times.driEV bikes are embedded
+      with latest technologies to provide the greatest user experience by
+      monitoring the various parameters of the bike like, speed, mileage,
+      location and battery percentage, so the customers just cruise along. driEV
+      also provides micro services such as helmets,zero insurance hassles and No
+      Maintenance worries on renting EVs and anything that provides a better
+      user experience. Our vision is to make urban commute accessible,
+      affordable and sustainable, what is currently a start-up is prepped to
+      scale to make ownership of two-wheelers redundant by being just a click
+      away for customers, no matter how unique their demands are.driEV is an EV
+      bike sharing company based in Bhubaneswar with a vision of making urban
+      commute affordable and sustainable. We are the 1st EV bike sharing
+      start-up in eastern India providing smart mobility options with zero
+      tailpipe emissions. Born at the peak of the pandemic, we have kept scaling
+      new heights throughout the tough times.driEV bikes are embedded with
+      latest technologies to provide the greatest user experience by monitoring
+      the various parameters of the bike like, speed, mileage, location and
+      battery percentage, so the customers just cruise along. driEV also
+      provides micro services such as helmets,zero insurance hassles and No
+      Maintenance worries on renting EVs and anything that provides a better
+      user experience. Our vision is to make urban commute accessible,
+      affordable and sustainable, what is currently a start-up is prepped to
+      scale to make ownership of two-wheelers redundant by being just a click
+      away for customers, no matter how unique their demands are.driEV is an EV
+      bike sharing company based in Bhubaneswar with a vision of making urban
+      commute affordable and sustainable. We are the 1st EV bike sharing
+      start-up in eastern India providing smart mobility options with zero
+      tailpipe emissions. Born at the peak of the pandemic, we have kept scaling
+      new heights throughout the tough times.driEV bikes are embedded with
+      latest technologies to provide the greatest user experience by monitoring
+      the various parameters of the bike like, speed, mileage, location and
+      battery percentage, so the customers just cruise along. driEV also
+      provides micro services such as helmets,zero insurance hassles and No
+      Maintenance worries on renting EVs and anything that provides a better
+      user experience. Our vision is to make urban commute accessible,
+      affordable and sustainable, what is currently a start-up is prepped to
+      scale to make ownership of two-wheelers redundant by being just a click
+      away for customers, no matter how unique their demands are.
+    </p>
+
+    <a href="javascript: void(0)" id="#cancellationPolicy"></a>
+    <app-page-title
+      [titleData]="{ title: 'Cancellation Policy', className: 'text-primary' }"
+    ></app-page-title>
+    <div class="cancellation-policy">
+      <p>
+        Our focus is complete customer satisfaction. In the event, if you are
+        displeased with the services provided, we will refund back the money,
+        provided the reasons are genuine and proved after investigation. Please
+        read the fine prints of each deal before buying it, it provides all the
+        details about the services or the product you purchase.
+      </p>
+      <p><strong>Booking related</strong></p>
+      <p>No show - 100% deduction and only security deposit will be refunded</p>
+      <p>
+        Between 0 - 6 hrs of the pick up time - 75% rental charges will be
+        withheld and security deposit will be refunded.
+      </p>
+      <p>
+        Between 6-24 hrs of the pick up time: 50% rental charges will be
+        withheld.
+      </p>
+      <p>
+        Between 24-72 hrs of the pick up time: 25% rental charges will be
+        withheld.
+      </p>
+      <p>
+        72 hrs or more prior to the pick up time: 10% rental charges will be
+        withheld.
+      </p>
+      <p>Long term booking related</p>
+      <p>
+        The deposit will be refunded, however, deduction on the monthly rental
+        amount will be applicable as mentioned below.
+      </p>
+      <p>Before start of rental period - 10% of the first month's rent.</p>
+      <p>During the rental period - Half month's rent.</p>
+      <p>Cancellation due to document issue:</p>
+    </div>
+
+    <app-page-title
+      [titleData]="{ title: 'Terms & Condition', className: 'text-primary' }"
+    ></app-page-title>
+    <div class="terms-conditions">
+      <p class="pb-3">
+        The terms and conditions of Techsofin Pvt. Ltd. (Company) are the
+        policies that govern the relationship between the Company and the User.
+        These terms and conditions (as amended from time to time including all
+        Schedules and Annexures hereto) shall constitute a legally valid and
+        binding contract under the Applicable Laws and the use of any product
+        Services either through Techsofin Pvt. Ltd.' Website or Application
+        (hereinafter referred to as App”) by the User shall be deemed to be an
+        acceptance of all the terms and conditions set forth herein. Users are
+        advised to read these terms and conditions carefully before
+        using/registering on the Website/ App or availing Services through the
+        same. Techsofin Pvt. Ltd. reserves the right to alter/modify/change
+        these terms and conditions in its sole discretion, from time to time,
+        with or without prior notice to the User. Notice of any changes shall be
+        made by Techsofin Pvt. Ltd., promptly and communicated/brought to the
+        attention of the User in such manner as it deems fit.
+      </p>
+
+      <div class="policy-accordions">
+        <ngb-accordion #acc="ngbAccordion">
+          <ngb-panel
+            id="toggle-{{ i + 1 }}"
+            [title]="policy.title"
+            *ngFor="let policy of policyList; let i = index"
+          >
+            <ng-template ngbPanelContent>
+              {{ policy.description }}
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+    </div>
+  </div>
+</div>

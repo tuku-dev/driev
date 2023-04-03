@@ -1,0 +1,82 @@
+<div class="container px-1">
+  <div
+    class="d-flex align-items-center justify-content-between justify-content-lg-start gap-4 py-3"
+  >
+    <a class="three-bars d-lg-none" (click)="openNav()">
+      <img src="{{ assetPath }}imgs/3-bars.svg" alt="" />
+    </a>
+    <a routerLink="./" class="logo">
+      <img src="{{ assetPath }}imgs/driEV.svg" alt="" />
+    </a>
+    <div class="partner-with-us d-none d-lg-block">
+      <a
+        [routerLink]="['/partner-with-us']"
+        class="button button-primary rounded-pill px-4"
+        >Partner with us</a
+      >
+    </div>
+    <div class="nav-item d-lg-none">
+      <a
+        href="javascript: void(0)"
+        class="nav-link"
+        *ngIf="!isLoggedIn"
+        (click)="openLoginModal()"
+        >Login/Signup</a
+      >
+      <a
+        href="javascript: void(0)"
+        class="nav-link p-0"
+        *ngIf="isLoggedIn"
+        (click)="openProfileMenus()"
+        ><img
+          src="{{ assetPath }}imgs/user-avtar.png"
+          alt=""
+          class="rounded-circle"
+      /></a>
+    </div>
+    <menu class="navigation ms-auto d-none d-lg-block">
+      <app-navigation></app-navigation>
+    </menu>
+  </div>
+</div>
+
+<div
+  class="modal left fade"
+  id="myModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Left Sidebar</h4>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+          terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+          skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+          single-origin coffee nulla assumenda shoreditch et. Nihil anim
+          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+          you probably haven't heard of them accusamus labore sustainable VHS.
+        </p>
+      </div>
+    </div>
+    <!-- modal-content -->
+  </div>
+  <!-- modal-dialog -->
+</div>
+<!-- modal -->

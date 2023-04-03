@@ -1,0 +1,48 @@
+<div class="payment-container member-content">
+  <div class="payment-details">
+    <div class="filter-section text-end py-3">
+      <a
+        href="javascript: void(0)"
+        class="d-inline-block text-secondary"
+        (click)="openFilters()"
+      >
+        <span>Sort By</span>
+        <img
+          src="{{ assetPath }}imgs/Filter.png"
+          alt=""
+          style="max-width: 22px"
+        />
+      </a>
+    </div>
+    <div class="payment-list">
+      <div class="table-names">
+        <span></span>
+        <div class="date">Date</div>
+        <div class="transaction-id">Transaction Id</div>
+        <div class="status">Status</div>
+        <div class="total-amount">Total Amount</div>
+      </div>
+      <div class="table-values">
+        <div
+          class="table-row"
+          *ngFor="let item of paymentList"
+          (click)="showDetails(item)"
+        >
+          <div class="img-container">
+            <img
+              src="{{ assetPath }}imgs/booking-bike.png"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="date">{{ item.dated | date : "dd MMM YYYY" }}</div>
+          <div class="transaction-id">
+            {{ item.transactionId }}
+          </div>
+          <div class="status text-capitalize">{{ item.status }}</div>
+          <div class="total-amount">&#8377; {{ item.totalAmount }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

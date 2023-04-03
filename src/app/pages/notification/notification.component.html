@@ -1,0 +1,10 @@
+<div class="notification-container member-content">
+  <div
+    class="notification-item d-flex align-items-center justify-content-between gap-2 radius mb-3"
+    [ngClass]="{ viewed: item.viewed }"
+    *ngFor="let item of notificationList"
+  >
+    <div class="message">{{ item.message }}</div>
+    <div class="dated">{{ dateFormat(item.dated) }}</div>
+  </div>
+</div>

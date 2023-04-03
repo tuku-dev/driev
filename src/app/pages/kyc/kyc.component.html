@@ -1,0 +1,160 @@
+<div class="kyc-container member-content">
+  <div class="p-3 p-lg-5">
+    <form>
+      <div class="complete-progress mb-4">
+        <label class="form-label">Completed KYC</label>
+        <div class="range-container">
+          <span class="range" style="width: 10%"></span>
+          <span class="range-amount" style="left: calc(10% - 10px)">10%</span>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="emailId" class="form-label"
+          >Email <span class="text-danger">*</span></label
+        >
+        <input
+          type="email"
+          name="emailId"
+          id="emailId"
+          class="form-control"
+          placeholder="email@domain.com"
+        />
+      </div>
+      <div class="mx-auto button-verification-container text-center mb-3">
+        <button class="button button-primary text-uppercase">
+          Send Verification Link
+        </button>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="aadharNumber" class="form-label"
+          >Aadhar Number For Verification
+          <span class="text-danger">*</span></label
+        >
+        <input
+          type="text"
+          name="aadharNumber"
+          id="aadharNumber"
+          class="form-control"
+          placeholder="Enter your 12 digit Aadhar number"
+        />
+      </div>
+
+      <div class="mx-auto button-verification-container text-center mb-3">
+        <button class="button text-uppercase border">Send OTP</button>
+      </div>
+
+      <div
+        class="form-group mb-3 d-flex align-items-center justify-content-center otp-container mb-3"
+      >
+        <input
+          type="number"
+          maxlength="1"
+          name="otp1"
+          id="otp1"
+          class="otp-input"
+        />
+        <input
+          type="number"
+          maxlength="1"
+          name="otp2"
+          id="otp2"
+          class="otp-input"
+        />
+        <input
+          type="number"
+          maxlength="1"
+          name="otp3"
+          id="otp3"
+          class="otp-input"
+        />
+        <input
+          type="number"
+          maxlength="1"
+          name="otp4"
+          id="otp4"
+          class="otp-input"
+        />
+        <input
+          type="number"
+          maxlength="1"
+          name="otp5"
+          id="otp5"
+          class="otp-input"
+        />
+        <input
+          type="number"
+          maxlength="1"
+          name="otp6"
+          id="otp6"
+          class="otp-input"
+        />
+      </div>
+      <p class="text-center text-quaternary small">
+        Enter OTP send to your mobile number xxxx xx 9927
+      </p>
+
+      <div class="mx-auto button-verification-container text-center mb-5">
+        <button class="button button-primary text-uppercase">Verify</button>
+      </div>
+
+      <div class="upload-section">
+        <div
+          class="custom-file-upload d-flex align-items-center justify-content-center flex-column gap-3 upload-aadhar"
+          (click)="openUploadModal(1)"
+        >
+          <img
+            src="{{ assetPath }}imgs/Add-Image.png"
+            alt=""
+            class="img-fluid d-block mx-auto"
+          />
+          <div class="file-name">Upload Aadhaar</div>
+        </div>
+        <div
+          class="custom-file-upload d-flex align-items-center justify-content-center flex-column gap-3 upload-dl"
+          (click)="openUploadModal(2)"
+        >
+          <img
+            src="{{ assetPath }}imgs/Add-Image.png"
+            alt=""
+            class="img-fluid d-block mx-auto"
+          />
+          <div class="file-name">Upload DL</div>
+        </div>
+        <div
+          class="custom-file-upload d-flex align-items-center justify-content-center flex-column gap-3 upload-photo"
+          (click)="openUploadModal(3)"
+        >
+          <img
+            src="{{ assetPath }}imgs/Add-Image.png"
+            alt=""
+            class="img-fluid d-block mx-auto"
+          />
+          <div class="file-name">Upload Photograph</div>
+        </div>
+        <div
+          class="custom-file-upload d-flex align-items-center justify-content-center flex-column gap-3 upload-local-id"
+          (click)="openUploadModal(4)"
+        >
+          <img
+            src="{{ assetPath }}imgs/Add-Image.png"
+            alt=""
+            class="img-fluid d-block mx-auto"
+          />
+          <div class="file-name">Upload Local ID</div>
+        </div>
+        <div
+          class="custom-file-upload d-flex align-items-center justify-content-center flex-column gap-3 upload-student-id"
+          (click)="openUploadModal(5)"
+        >
+          <img
+            src="{{ assetPath }}imgs/Add-Image.png"
+            alt=""
+            class="img-fluid d-block mx-auto"
+          />
+          <div class="file-name">Upload Student ID</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

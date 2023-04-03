@@ -1,0 +1,12 @@
+@import "../../../../../assets/_scss/mixins";
+
+.upload-container {
+  .upload-item {
+    .upload-area {
+      .custom-file-upload {
+        @include square(170px, 150px);
+        cursor: pointer;
+      }
+    }
+  }
+}

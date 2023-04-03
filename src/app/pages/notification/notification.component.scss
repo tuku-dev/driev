@@ -1,0 +1,26 @@
+@import "../../../assets/_scss/variables";
+@import "../../../assets/_scss/mixins";
+
+.notification-container {
+  .notification-item {
+    background-color: mix($quaternary, $tertiary, 5%);
+    padding: 1rem;
+    padding-left: 4rem;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      @include square(15px);
+      left: 1rem;
+      background-color: $primary;
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      border-radius: $radius;
+    }
+    &.viewed {
+      background-color: $tertiary;
+    }
+  }
+}

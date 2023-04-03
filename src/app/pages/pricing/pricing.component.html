@@ -1,0 +1,137 @@
+<div class="pricing-container mb-5 py-5">
+  <div class="container">
+    <app-page-title
+      [titleData]="{ title: 'Pricing', className: 'text-tertiary' }"
+    ></app-page-title>
+    <p class="page-desc text-center text-white mb-5">
+      All Brain. All Power. All Electric. Everything you imagined your next ride
+      to<br />
+      be and beyond. The Ather 450X.All
+    </p>
+
+    <div class="custom-nav-tabs">
+      <button
+        class="tablinks nav-link active"
+        (click)="showPricing($event, 'dailySection'); dailySlider.slickGoTo(1)"
+      >
+        Daily
+      </button>
+      <button
+        class="tablinks nav-link"
+        (click)="
+          showPricing($event, 'weeklySection'); weeklySlider.slickGoTo(1)
+        "
+      >
+        Weekly
+      </button>
+      <button
+        class="tablinks nav-link"
+        (click)="
+          showPricing($event, 'subscription'); subscriptionSlider.slickGoTo(1)
+        "
+      >
+        Subscription
+      </button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="dailySection" class="tabcontent">
+      <div class="slick-container">
+        <ngx-slick-carousel
+          class="daily-carousel"
+          #dailySlider="slick-carousel"
+          [config]="dailyConfig"
+          (init)="dailySlickInit($event)"
+          (breakpoint)="breakpoint($event)"
+          (afterChange)="afterChange($event)"
+          (beforeChange)="beforeChange($event)"
+        >
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="slide-title">{{ slide.name }}</div>
+            <div class="slide-details">
+              <span class="detail-item" *ngFor="let item of slide.details">{{
+                item
+              }}</span>
+            </div>
+            <div class="slide-action text-end d-flex flex-column">
+              <span class="d-flex ms-auto px-4 text-center item-price"
+                >&#8377;{{ slide.price }}/{{ slide.duration }}</span
+              >
+              <a
+                [routerLink]="['/{{ slide.link }}']"
+                class="button d-inline-flex my-2 ms-auto px-5 item-link"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+
+    <div id="weeklySection" class="tabcontent" style="display: none">
+      <div class="slick-container">
+        <ngx-slick-carousel
+          class="weekly-carousel"
+          #weeklySlider="slick-carousel"
+          [config]="weeklyConfig"
+          (init)="weeklySlickInit($event)"
+          (breakpoint)="breakpoint($event)"
+          (afterChange)="afterChange($event)"
+          (beforeChange)="beforeChange($event)"
+        >
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="slide-title">{{ slide.name }}</div>
+            <div class="slide-details">
+              <span class="detail-item" *ngFor="let item of slide.details">{{
+                item
+              }}</span>
+            </div>
+            <div class="slide-action text-end d-flex flex-column">
+              <span class="d-flex ms-auto px-4 text-center item-price"
+                >&#8377;{{ slide.price }}/{{ slide.duration }}</span
+              >
+              <a
+                [routerLink]="['/{{ slide.link }}']"
+                class="button d-inline-flex my-2 ms-auto px-5 item-link"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+
+    <div id="subscription" class="tabcontent" style="display: none">
+      <div class="slick-container">
+        <ngx-slick-carousel
+          class="subscription-carousel"
+          #subscriptionSlider="slick-carousel"
+          [config]="subscriptionConfig"
+          (init)="subscriptionSlickInit($event)"
+          (breakpoint)="breakpoint($event)"
+          (afterChange)="afterChange($event)"
+          (beforeChange)="beforeChange($event)"
+        >
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="slide-title">{{ slide.name }}</div>
+            <div class="slide-details">
+              <span class="detail-item" *ngFor="let item of slide.details">{{
+                item
+              }}</span>
+            </div>
+            <div class="slide-action text-end d-flex flex-column">
+              <span class="d-flex ms-auto px-4 text-center item-price"
+                >&#8377;{{ slide.price }}/{{ slide.duration }}</span
+              >
+              <a
+                [routerLink]="['/{{ slide.link }}']"
+                class="button d-inline-flex my-2 ms-auto px-5 item-link"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+@import "../../../../assets/_scss/variables";
+
+.blog-container {
+  padding-bottom: 100px;
+  margin-top: 100px;
+  @media screen and (max-width: 991px) {
+    padding-bottom: 50px;
+    margin-top: 50px;
+  }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 25px;
+    margin-top: 25px;
+  }
+  .blog-box {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0px 0px 7px rgb(0 0 0 / 20%);
+    border-radius: $radius;
+    margin-top: 60px;
+    @media screen and (max-width: 1199px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @media screen and (max-width: 991px) {
+      padding-left: 25px;
+      padding-right: 25px;
+      margin-top: 0;
+    }
+    .blogs-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+      @media screen and (max-width: 1199px) {
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+      }
+      .blog-item {
+        .image-container {
+          img {
+            max-width: 315px;
+            max-height: 220px;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: $radius;
+            @media screen and (max-width: 767px) {
+              max-width: 200px;
+            }
+          }
+        }
+        .other-details {
+          .blog-title {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 0.15px;
+            margin-bottom: 10px;
+          }
+          .blog-date {
+            display: flex;
+            align-items: center;
+            > span {
+              zoom: 0.5;
+            }
+          }
+          .blog-date,
+          .blog-text {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.4px;
+            color: $quaternary;
+            margin-bottom: 10px;
+          }
+          .read-more {
+            display: block;
+            max-width: max-content;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

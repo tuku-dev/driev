@@ -1,0 +1,99 @@
+<div class="modal-body">
+  <a href=""></a>
+  <div class="text-center small font-weight-bold">Select Date</div>
+  <div class="today-date mt-4">{{ theDate | customDate : "ddd, MMM DD" }}</div>
+  <div class="navigate-section mb-3 d-flex align-items-center gap-2">
+    <div class="month-name" (click)="updateDates(); view = 1">
+      {{ theDate | customDate : "MMMM" }}
+    </div>
+    <div class="year-dropdown" (click)="prepareYears(); view = 2">
+      {{ theDate | customDate : "YYYY" }}
+    </div>
+
+    <div class="month-navigations d-flex ms-auto">
+      <div class="prev-month month-nav" (click)="previousMonth()">
+        <img
+          src="../../../assets/imgs/navigate_before.png"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+      <div class="next-month month-nav" (click)="nextMonth()">
+        <img
+          src="../../../assets/imgs/navigate_next.png"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="views">
+    <div class="month-view" *ngIf="view === 1">
+      <div class="day-names">
+        <span class="day-name">S</span>
+        <span class="day-name">M</span>
+        <span class="day-name">T</span>
+        <span class="day-name">W</span>
+        <span class="day-name">T</span>
+        <span class="day-name">F</span>
+        <span class="day-name">S</span>
+      </div>
+      <div class="week-dates">
+        <ng-container *ngFor="let week of dates">
+          <div
+            class="day-date"
+            [ngClass]="{
+              today: dateData.date === today,
+              selected: dateData.selected
+            }"
+            *ngFor="let dateData of week"
+          >
+            <span class="ignore" *ngIf="!dateData && dateData === 0"></span>
+            <span
+              class=""
+              *ngIf="dateData"
+              (click)="selectThis(dateData, 'date')"
+              >{{ dateData.date }}</span
+            >
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="year-list" *ngIf="view === 2">
+      <ng-container *ngFor="let yearData of yearsList">
+        <span
+          class="year-item"
+          [ngClass]="{
+            'current-year': yearData.year === thisYear,
+            selected: yearData.selected
+          }"
+          (click)="selectThis(yearData, 'year')"
+          >{{ yearData.year }}</span
+        >
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="actions text-end">
+    <a
+      href="javascript: void(0)"
+      (click)="close()"
+      class="text-primary text-decoration-none d-inline-block px-2"
+      >Cancel</a
+    >
+    <a
+      href="javascript: void(0)"
+      *ngIf="view === 2"
+      (click)="view = 1"
+      class="text-primary text-decoration-none d-inline-block px-2"
+      >Next</a
+    >
+    <a
+      href="javascript: void(0)"
+      *ngIf="view === 1"
+      class="text-primary text-decoration-none d-inline-block px-2"
+      (click)="ok()"
+      >Ok</a
+    >
+  </div>
+</div>

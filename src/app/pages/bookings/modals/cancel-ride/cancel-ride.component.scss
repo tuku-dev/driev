@@ -1,0 +1,37 @@
+@import "../../../../../assets/_scss/variables";
+
+.cancel-ride-container {
+  min-height: 400px;
+  img {
+    max-width: 80px;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  .modal-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+    color: $secondary;
+  }
+  .modal-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    color: $quaternary;
+  }
+  .modal-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
+    .button {
+      width: calc(50% - 15px);
+    }
+  }
+}

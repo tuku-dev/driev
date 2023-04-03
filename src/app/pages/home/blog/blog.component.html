@@ -1,0 +1,27 @@
+<div class="blog-container">
+  <div class="container px-1">
+    <h2 class="section-title-1 text-center mb-3">Our Blogs</h2>
+    <p class="text-center">Latest Blogs & articles</p>
+
+    <div class="blog-box d-flex flex-wrap gap-4">
+      <div class="blogs-list">
+        <div class="blog-item gap-4 d-flex" *ngFor="let item of blogList">
+          <div class="image-container">
+            <img src="{{ item.imgUrl }}" class="img-fluid" alt="" />
+          </div>
+          <div class="other-details">
+            <div class="blog-title">{{ item.title }}</div>
+            <div class="blog-date">
+              <span class="d-inline-block bg-pending_actions"></span
+              >{{ item.dated | date : "MMMM dd, YYYY" }}
+            </div>
+            <div class="blog-text">{{ item.shortText }}</div>
+            <a href="javascript:void(0)" class="read-more button button-primary py-1"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

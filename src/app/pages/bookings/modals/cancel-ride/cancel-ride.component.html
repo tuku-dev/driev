@@ -1,0 +1,17 @@
+<div class="cancel-ride-container pt-5 pb-5 px-3">
+  <a href=""></a>
+  <!-- This Anchor tag is used to divert autofocus from button-->
+  <img
+    src="../../../../assets/imgs/Inconvience-red.png"
+    alt=""
+    class="img-fluid d-block mx-auto"
+  />
+  <div class="modal-title">Cancel Upcoming Ride</div>
+  <div class="modal-description">Cancelling your ride might incur charges.</div>
+  <div class="modal-buttons">
+    <button class="button border text-quaternary" (click)="close()">
+      Discard
+    </button>
+    <button class="button border text-primary" (click)="submit()">Ok</button>
+  </div>
+</div>

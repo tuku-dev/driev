@@ -1,0 +1,78 @@
+<div class="partner-with-us-container mb-5 py-5">
+  <div class="container px-1">
+    <app-page-title
+      [titleData]="{ title: 'Partner With Us', className: 'text-primary' }"
+    ></app-page-title>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="partner-img me-0 me-lg-5">
+            <img
+              src="../../../assets/imgs/Partner-with-us.png"
+              alt=""
+              class="img-fluid d-block mx-auto"
+            />
+            <p class="text-primary mx-auto text-center">
+              Please reach out to us and be our partner in revolutionising 2W
+              ownership.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+          <div class="partner-form">
+            <form>
+              <div class="mb-3">
+                <label class="form-label text-quaternary" for="name"
+                  >Name <span class="text-danger">*</span></label
+                >
+                <input class="form-control" id="name" type="text" />
+                <div class="invalid-feedback">Name is required.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-quaternary" for="email"
+                  >Email <span class="text-danger">*</span></label
+                >
+                <input class="form-control" id="email" type="email" />
+                <div class="invalid-feedback">Email is required.</div>
+                <div class="invalid-feedback">Email Email is not valid.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-quaternary" for="phone"
+                  >Phone <span class="text-danger">*</span></label
+                >
+                <input class="form-control" id="phone" type="text" />
+                <div class="invalid-feedback">Phone is required.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-quaternary" for="description"
+                  >Description</label
+                >
+                <textarea
+                  class="form-control"
+                  id="description"
+                  type="text"
+                  style="height: 10rem"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            class="button button-primary d-inline-block w-100 py-3 mt-5 submit-button"
+            id="submitButton"
+            type="button"
+            (click)="submit()"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="note-text text-center mt-4 text-quaternary">
+          <span class="text-danger">Note *</span> :- Our team will reach out to
+          you within next 24 working hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

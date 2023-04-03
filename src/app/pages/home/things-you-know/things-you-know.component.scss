@@ -1,0 +1,76 @@
+@import "../../../../assets/_scss/variables";
+
+.things-you-should-know {
+  padding-bottom: 100px;
+  @media screen and (max-width: 991px) {
+    padding-bottom: 50px;
+  }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 25px;
+  }
+  .detail-box {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0px 0px 7px rgb(0 0 0 / 20%);
+    border-radius: $radius;
+    margin-top: 60px;
+    @media screen and (max-width: 1199px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @media screen and (max-width: 991px) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .image-box {
+      @media screen and (max-width: 1199px) {
+        width: 100%;
+      }
+      img {
+        max-width: 426px;
+        min-height: 550px;
+        object-fit: cover;
+        object-position: center center;
+        @media screen and (max-width: 1199px) {
+          max-width: unset;
+          width: 100%;
+          min-height: unset;
+        }
+      }
+    }
+    .details-content {
+      flex-grow: 1;
+      font-size: 83%;
+      .detail-item {
+        padding: 7px 25px;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+        border-radius: $radius;
+
+        .icon-section {
+          padding-top: 10px;
+          margin-left: -6px;
+          > div {
+            zoom: 1.3;
+          }
+        }
+        .content-section {
+          flex-grow: 1;
+          padding-top: 10px;
+          p {
+            margin-bottom: 0.7rem;
+          }
+        }
+      }
+      .btn {
+        max-width: fit-content;
+        align-self: center;
+      }
+    }
+  }
+}

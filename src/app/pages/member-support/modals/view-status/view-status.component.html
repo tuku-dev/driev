@@ -1,0 +1,56 @@
+<div class="status-list-container p-5">
+  <ng-container *ngIf="bookingList.length">
+    <img
+      src="{{ assetPath }}imgs/Memo.png"
+      alt=""
+      class="d-block mx-auto img-fluid mb-2"
+    />
+    <div class="page-title text-primary text-center mb-2">Status</div>
+
+    <div class="booking-list mt-5">
+      <div class="table-names">
+        <span></span>
+        <div class="date">Date</div>
+        <div class="transaction-id">Booking Id</div>
+        <div class="status text-end">Status</div>
+      </div>
+      <div class="table-values">
+        <div class="table-row" *ngFor="let item of bookingList">
+          <div class="img-container">
+            <img
+              src="{{ assetPath }}imgs/booking-bike.png"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="date">{{ item.dated | date : "dd MMM YYYY" }}</div>
+          <div class="transaction-id">{{ item.bookingId }}</div>
+          <div class="status text-end text-capitalize">
+            <span
+              [ngClass]="{
+                'text-primary': item.status === 'Resolved',
+                'text-danger': item.status === 'Pending'
+              }"
+              >{{ item.status }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <div class="not-found" *ngIf="!bookingList.length">
+    <a href=""></a>
+    <div class="d-flex flex-column gap-4 text-center">
+      <img
+        src="../{{ assetPath }}imgs/No-Data-Found.png"
+        alt=""
+        class="img-fluid d-block mx-auto"
+      />
+      <div class="text-center">
+        <button class="button button-primary text-uppercase d-inline-block">
+          Go Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

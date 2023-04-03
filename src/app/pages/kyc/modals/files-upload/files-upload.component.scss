@@ -1,0 +1,12 @@
+@import "../../../../../assets/_scss/variables";
+@import "../../../../../assets/_scss/mixins";
+
+.buttons {
+  .button {
+    &:hover {
+      color: $tertiary;
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+}

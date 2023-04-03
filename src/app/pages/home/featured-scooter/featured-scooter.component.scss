@@ -1,0 +1,77 @@
+@import "../../../../assets/_scss/variables";
+
+.featured-scooter {
+  // opacity: 0.5;
+  padding-bottom: 100px;
+  .scooter-slider {
+    background: url("../../../../assets/imgs/featured-bg.png") no-repeat center
+      bottom;
+    position: relative;
+
+    .img-container {
+      position: relative;
+      .bike-image {
+        max-width: 564px;
+        min-height: 539px;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+    .featured-name {
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 40px;
+      letter-spacing: 0.25px;
+    }
+
+    .featured-details {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        position: relative;
+        margin-right: 15px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.4px;
+        &::before {
+          content: "";
+          background: url("../../../../assets/imgs/green-arrow-right.png")
+            no-repeat left center;
+          height: 13px;
+          width: 16px;
+          display: inline-block;
+          margin-bottom: -1px;
+        }
+      }
+    }
+
+    .dots {
+      position: absolute;
+      bottom: -80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      left: 0;
+      right: 0;
+      .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 13px;
+        padding: 0;
+        background: $quaternary;
+        transition: width 0.3s ease-in-out;
+        -webkit-appearance: media-slider;
+        &.active {
+          width: 23px;
+          background: $primary;
+        }
+      }
+    }
+  }
+}

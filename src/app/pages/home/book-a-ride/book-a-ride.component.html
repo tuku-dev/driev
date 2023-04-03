@@ -1,0 +1,60 @@
+<form>
+  <div class="search-form-container align-items-end">
+    <div class="city-section d-flex flex-column">
+      <label class="form-label text-white">Search your City</label>
+      <input type="text" class="form-control search-city search-input" />
+    </div>
+    <div class="rental-type-section">
+      <label class="form-label text-white">Rental Type</label>
+      <select
+        name="rentalType"
+        id="rentalType"
+        class="form-select search-input search-type"
+      >
+        <option value="">Select</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="subscription">Subscription</option>
+      </select>
+    </div>
+    <div class="duration-section">
+      <label class="form-label text-white">Select Duration</label>
+      <div class="search-input d-flex align-items-center gap-2">
+        <input type="text" class="select-duration" placeholder="Day(s)" />
+        <div class="controls d-flex gap-2 ms-auto">
+          <span class="bg-Circle_Minus d-inline-block"></span>
+          <!-- <span class="minus rounded-circle">-</span> -->
+          <span class="value">01</span>
+          <span class="bg-Circle_plus d-inline-block"></span>
+          <!-- <span class="plus rounded-circle">+</span> -->
+        </div>
+      </div>
+    </div>
+    <div class="date-time-section">
+      <label class="form-label text-white">Choose Date & Time</label>
+      <div class="search-input align-items-center gap-2">
+        <input
+          type="text"
+          class="choose-date text-primary"
+          readonly
+          placeholder="DD / MM / YYYY"
+          (click)="openDatePicker()"
+          [(ngModel)]="datePicker"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <input
+          type="text"
+          class="choose-time text-primary"
+          readonly
+          placeholder="HH : MM hrs"
+          (click)="openTimePicker()"
+          [(ngModel)]="timePicker"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </div>
+    <div class="proceed-section">
+      <button class="button button-light">Proceed</button>
+    </div>
+  </div>
+</form>

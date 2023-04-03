@@ -1,0 +1,34 @@
+<nav class="nav nav-tabs flex-column border side-nav px-3">
+  <div class="user-details">
+    <img
+      src="../../../assets/imgs/user-avtar-2.png"
+      alt=""
+      class="d-block mx-auto user-avtar"
+    />
+    <div class="user-name text-primary">Jaya Kumari</div>
+    <a
+      href="mailto:useremailid@drive.bike"
+      class="text-quaternary text-decoration-none user-email"
+      >useremailid@drive.bike</a
+    >
+  </div>
+  <a
+    *ngFor="let nav of navs"
+    [routerLink]="[nav.link]"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="close()"
+    class="nav-link"
+    >{{ nav.name }}</a
+  >
+
+  <a class="logout text-center text-decoration-none d-block" href="#">
+    <img
+      src="../../../assets/imgs/mode_off_on.png"
+      alt=""
+      style="max-width: 24px"
+      class="mx-auto d-block"
+    />
+    <span class="text-primary d-inline-block">Logout</span>
+  </a>
+</nav>

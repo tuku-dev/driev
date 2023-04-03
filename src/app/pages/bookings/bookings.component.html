@@ -1,0 +1,185 @@
+<div class="my-bookings-container border member-content px-0">
+  <div class="custom-nav-tabs">
+    <button
+      class="tablinks nav-link active"
+      (click)="showBookings($event, 'active')"
+    >
+      Active
+    </button>
+    <button
+      class="tablinks nav-link"
+      (click)="showBookings($event, 'upcoming')"
+    >
+      Upcoming
+    </button>
+    <button
+      class="tablinks nav-link"
+      (click)="showBookings($event, 'completed')"
+    >
+      Completed
+    </button>
+    <button
+      class="tablinks nav-link"
+      (click)="showBookings($event, 'cancelled')"
+    >
+      Cancelled
+    </button>
+  </div>
+  <div id="active" class="tabcontent">
+    <div class="booking-list">
+      <div
+        class="booking-item border-top border-bottom p-3"
+        *ngFor="let item of bookingActiveList"
+      >
+        <div class="support-link text-end">
+          <a href="javascript: void(0)">
+            <img src="{{ assetPath }}imgs/support-headphones.png" alt="" />
+          </a>
+        </div>
+        <div class="image-container">
+          <img src="{{ item.imgUrl }}" alt="" class="img-fluid" />
+        </div>
+        <div class="bike-details d-flex flex-column gap-3">
+          <div class="bike-name">{{ item.name }}</div>
+          <div class="bike-description">{{ item.description }}</div>
+        </div>
+        <div class="bike-data">
+          <div
+            class="bike-vehicle-number detail-item d-flex align-items-center justify-content-between"
+            *ngFor="let detail of item.vehicleDetails"
+          >
+            <span class="key"> {{ detail.name }} </span>
+            <span class="value">{{ detail.value }}</span>
+          </div>
+        </div>
+        <div class="bike-booking-date">Booking Date: {{ item.dated }} km</div>
+        <div class="button-section d-flex flex-row flex-lg-column gap-2">
+          <button
+            class="button button-primary button-topup"
+            (click)="topUpList()"
+          >
+            Add Top-up
+          </button>
+          <button class="button button-renew border">Renew</button>
+          <button
+            class="button button-return border"
+            (click)="openConfirmation('return')"
+          >
+            Return
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="upcoming" class="tabcontent" style="display: none">
+    <div class="booking-list">
+      <div
+        class="booking-item border-top border-bottom p-3"
+        *ngFor="let item of bookingUpcomingList"
+      >
+        <div class="support-link text-end">
+          <a href="javascript: void(0)">
+            <img src="{{ assetPath }}imgs/support-headphones.png" alt="" />
+          </a>
+        </div>
+        <div class="image-container">
+          <img src="{{ item.imgUrl }}" alt="" class="img-fluid" />
+        </div>
+        <div class="bike-details d-flex flex-column gap-3">
+          <div class="bike-name">{{ item.name }}</div>
+          <div class="bike-description">{{ item.description }}</div>
+        </div>
+        <div class="bike-data">
+          <div
+            class="bike-vehicle-number detail-item d-flex align-items-center justify-content-between"
+            *ngFor="let detail of item.vehicleDetails"
+          >
+            <span class="key"> {{ detail.name }} </span>
+            <span class="value">{{ detail.value }}</span>
+          </div>
+        </div>
+        <div class="bike-booking-date">Booking Date: {{ item.dated }} km</div>
+        <div class="button-section d-flex flex-row flex-lg-column gap-2">
+          <button
+            class="button button-renew border"
+            (click)="openConfirmation('cancel')"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="completed" class="tabcontent" style="display: none">
+    <div class="booking-list">
+      <div
+        class="booking-item border-top border-bottom p-3"
+        *ngFor="let item of bookingCompletedList"
+      >
+        <div class="support-link text-end">
+          <a href="javascript: void(0)">
+            <img src="{{ assetPath }}imgs/support-headphones.png" alt="" />
+          </a>
+        </div>
+        <div class="image-container">
+          <img src="{{ item.imgUrl }}" alt="" class="img-fluid" />
+        </div>
+        <div class="bike-details d-flex flex-column gap-3">
+          <div class="bike-name">{{ item.name }}</div>
+          <div class="bike-description">{{ item.description }}</div>
+        </div>
+        <div class="bike-data">
+          <div
+            class="bike-vehicle-number detail-item d-flex align-items-center justify-content-between"
+            *ngFor="let detail of item.vehicleDetails"
+          >
+            <span class="key"> {{ detail.name }} </span>
+            <span class="value">{{ detail.value }}</span>
+          </div>
+        </div>
+        <div class="bike-booking-date">Booking Date: {{ item.dated }} km</div>
+        <div class="button-section d-flex flex-row flex-lg-column gap-2">
+          <button class="button button-primary button-invoice border">
+            Invoice
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="cancelled" class="tabcontent" style="display: none">
+    <div class="booking-list">
+      <div
+        class="booking-item border-top border-bottom p-3"
+        *ngFor="let item of bookingCancelledList"
+      >
+        <div class="support-link text-end">
+          <a href="javascript: void(0)">
+            <img src="{{ assetPath }}imgs/support-headphones.png" alt="" />
+          </a>
+        </div>
+        <div class="image-container">
+          <img src="{{ item.imgUrl }}" alt="" class="img-fluid" />
+        </div>
+        <div class="bike-details d-flex flex-column gap-3">
+          <div class="bike-name">{{ item.name }}</div>
+          <div class="bike-description">{{ item.description }}</div>
+        </div>
+        <div class="bike-data">
+          <div
+            class="bike-vehicle-number detail-item d-flex align-items-center justify-content-between"
+            *ngFor="let detail of item.vehicleDetails"
+          >
+            <span class="key"> {{ detail.name }} </span>
+            <span class="value">{{ detail.value }}</span>
+          </div>
+        </div>
+        <div class="bike-booking-date">Booking Date: {{ item.dated }} km</div>
+        <div class="button-section d-flex flex-row flex-lg-column gap-2">
+          <button class="button button-primary button-invoice border">
+            Invoice
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

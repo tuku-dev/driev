@@ -1,0 +1,29 @@
+<div class="uploads-container">
+  <div class="text-center p-5">
+    <p>
+      Please upload one of these image file types : .PNG .JPG .PDF. The maximum
+      size of the image should between 500kb to 3.5mb.
+    </p>
+    <p>
+      NOTE : Blurred and unclear of image will prevent us from verifying the
+      validity of your ID.
+    </p>
+
+    <app-aadhar-upload *ngIf="stepCount === 1"></app-aadhar-upload>
+    <app-dl-upload *ngIf="stepCount === 2"></app-dl-upload>
+    <app-photo-upload *ngIf="stepCount === 3"></app-photo-upload>
+    <app-local-id-upload *ngIf="stepCount === 4"></app-local-id-upload>
+    <app-student-id-upload *ngIf="stepCount === 5"></app-student-id-upload>
+
+    <div class="px-3 pt-5">
+      <div class="buttons d-flex justify-content-end gap-3">
+        <button class="back-button button border" (click)="goBack()">
+          Back
+        </button>
+        <button class="next-button button border" (click)="goNext()">
+          Save & Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
